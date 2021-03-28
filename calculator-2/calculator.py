@@ -10,6 +10,7 @@ while True:
     tokens = user_input.split(" ")
 
     if tokens[0].lower() == 'q' or tokens[1] == 'q':
+        print('You quit...')
         break
     else:
         operator = tokens[0]
@@ -26,18 +27,25 @@ while True:
 
         if operator == "+":
             result = num1 + num2
+
         elif operator == "-":
             result = num1 - num2
+
         elif operator == "*":
             result = num1 * num2
+
         elif operator == "/":
             result = num1 / num2
+
         elif operator == "square":
             result = num1 ** 2
+
         elif operator.lower() == "cube" or operator.lower() == "c":
             result = num1 ** 3
+
         elif operator.lower == "pow" or operator.lower() == "p":
             result = num1 ** num2
+
         elif operator.lower() == "mod" or operator.lower() == "m":
             result = num1 % num2
 
