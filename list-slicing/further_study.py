@@ -46,7 +46,8 @@ def custom_append(input_list, value):
         True
 
     """
-
+    list_len = len(input_list)
+    input_list[list_len:] = [value]
     pass
 
 
