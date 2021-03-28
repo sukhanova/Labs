@@ -15,38 +15,47 @@ while True:
     else:
         operator = tokens[0]
         num1 = tokens[1]
-        num1 = float(num1)
+        # num1 = float(num1)
 
         if len(tokens) < 3:
             num2 = 0
         else:
             num2 = tokens[2]
-            num2 = float(num2)
+            # num2 = float(num2)
 
         result = None
 
+    if num1.isdigit() and num2.isdigit():
+
         if operator == "+":
-            result = num1 + num2
+            result = float(num1) + float(num2)
 
         elif operator == "-":
-            result = num1 - num2
+            result = float(num1) - float(num2)
 
         elif operator == "*":
-            result = num1 * num2
+            result = float(num1) * float(num2)
 
         elif operator == "/":
-            result = num1 / num2
+            result = float(num1) / float(num2)
 
         elif operator == "square":
             result = num1 ** 2
 
         elif operator.lower() == "cube" or operator.lower() == "c":
-            result = num1 ** 3
+            result = float(num1) ** 3
 
         elif operator.lower == "pow" or operator.lower() == "p":
-            result = num1 ** num2
+            result = float(num1) ** float(num2)
 
         elif operator.lower() == "mod" or operator.lower() == "m":
-            result = num1 % num2
+            result = float(num1) % float(num2)
 
-        print(result)
+        else:
+             print("Wrong order...Please type an operator and two numbers: ")
+            
+    else:
+        print("Your input should be actual numbers...")
+        print("Please type an operator and two numbers: ")
+
+    print(result)
