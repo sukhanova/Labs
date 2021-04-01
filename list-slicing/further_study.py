@@ -129,7 +129,7 @@ def custom_pop(input_list):
         ['Jan', 'Feb']
 
     """
-    last_item = input_list[-1]
+    last_item = input_list[-1:]
     input_list[-1:] = []
     return last_item
 
