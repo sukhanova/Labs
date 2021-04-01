@@ -231,8 +231,18 @@ def custom_equality(some_list, another_list):
         False
 
     """
+    some_list_len = len(some_list)
+    another_list_len = len(another_list)
 
-    return None
+    if some_list_len != another_list_len:
+        return False
+    
+    else:
+        
+        for item in range(some_list_len):
+            if some_list[item] != another_list[item]:
+                return False
+        return True
 
 
 # This is the part were we actually run the doctests.
