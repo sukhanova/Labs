@@ -103,7 +103,14 @@ def custom_remove(input_list, value):
         True
 
     """
-
+    counter = 0
+    list_len = len(input_list)
+    for item in range(list_len):
+        if input_list[item] == value:
+            input_list[counter:counter+1] = []
+            break
+        counter += 1
+    # return input_list
     pass
 
 
