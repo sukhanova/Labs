@@ -10,7 +10,6 @@ def open_and_read_file(file_path):
     the file's contents as one string of text.
     """
 
-    # your code goes here
     file = open(file_path).read()
 
     return file
@@ -43,26 +42,25 @@ def make_chains(text_string):
 
     chains = {}
 
-    # your code goes here
     words = text_string.split()
+
+    # Appending None to the list to set a stop point for loop in make_text function
+    words.append(None)
 
     length = len(words)
     
-    for index in range(length-2): #looping in the range of full words minus one for the last word
-        #print(words[index], words[index+1])
-        # print(index)
-        chains_key = (words[index],words[index+1]) #setting key value to equal first line of 2 words
-        #are we still on the first line here???? Maybe program hasn't completed the first line yet? (Yes)
-        chains_value = words[index+2] #setting value of the next line of 2 words
+    for index in range(length-2): 
+        chains_key = (words[index],words[index+1])
+        chains_value = words[index+2]
         print(chains_key, chains_value)
 
+        """Checking if the key is in the dictionary. initialize that list and put your word into it. If the key is already in the dictionary, append your word to the list that’s already there."""
         if chains_key not in chains:
             chains[chains_key] = []
 
-        chains[chains_key].append(chains_value) #updating dict with key + value together, this is not working
+        chains[chains_key].append(chains_value)
     
-    print(chains)
-
+    # print(chains)
     return chains
 
 
@@ -71,7 +69,18 @@ def make_text(chains):
 
     words = []
 
-    # your code goes here
+    """Create new key out of the second word in the first key 
+    and random word you pulled out from the list of words that followed it"""
+    key = choice(list(chains.keys()))
+    words = [key[0], key[1]]
+    word = choice(chains[key])
+
+    #Loop throught the list  - stop point is a word "None"(end of our original text)
+    while word is not None:
+        key = (key[1], word)
+        words.append(word)
+        word = choice(chains[key])
+
 
     return ' '.join(words)
 
