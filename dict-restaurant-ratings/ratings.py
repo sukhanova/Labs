@@ -27,9 +27,19 @@ def add_new_restaurant(scores):
 
     scores[new_restaurant] = new_rating
     # print(new_restaurant, new_rating)
+    print()
+
+def sort_scores(scores):
+    """Print sorted restaurants and its scores"""
+    for restaurant, rating in sorted(scores.items()):
+        print(f"{restaurant} is rated at {rating}")
+
 
 # read existing scores from file and store in scores variable
 scores = process_scores()
 
 # user can add a new restaurant and new rating
 add_new_restaurant(scores)
+
+#print restaurants in alphabetical order and its ratings
+sort_scores(scores)
