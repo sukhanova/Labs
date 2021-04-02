@@ -55,8 +55,15 @@ def students_by_cohort(filename, cohort='All'):
     """
 
     students = []
-
-    # TODO: replace this with your code
+    cohort_data = open(filename)
+    for line in cohort_data:
+      first_name = line.rstrip().split('|')[0]
+      last_name = line.rstrip().split('|')[1]
+      full_name = f"{first_name} {last_name}"
+      # house = line.rstrip().split('|')[2]
+      cohort_name = line.rstrip().split('|')[4]
+      if cohort_name not in('I','G') and cohort in ('All', cohort_name):
+        students.append(full_name)
 
     return sorted(students)
 
