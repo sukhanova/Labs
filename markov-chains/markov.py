@@ -55,7 +55,12 @@ def make_chains(text_string):
         #are we still on the first line here???? Maybe program hasn't completed the first line yet? (Yes)
         chains_value = words[index+2] #setting value of the next line of 2 words
         print(chains_key, chains_value)
-        # chains[chains_key].append(chains_value) #updating dict with key + value together, this is not working
+
+        if chains_key not in chains:
+            chains[chains_key] = []
+
+        chains[chains_key].append(chains_value) #updating dict with key + value together, this is not working
+    
     print(chains)
 
     return chains

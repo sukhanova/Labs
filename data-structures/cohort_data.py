@@ -167,7 +167,15 @@ def all_data(filename):
 
     all_data = []
 
-    # TODO: replace this with your code
+    student_data = open(filename)
+
+    for line in student_data:
+      first_name = line.rstrip().split('|')[0]
+      last_name = line.rstrip().split('|')[1]
+      full_name = f"{first_name} {last_name}"
+      house_name = line.rstrip().split('|')[2]
+      advisor = line.rstrip().split('|')[3]
+      cohort_name = line.rstrip().split('|')[4]
 
     return all_data
 
