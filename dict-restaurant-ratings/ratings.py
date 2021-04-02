@@ -1,8 +1,7 @@
 """Restaurant rating lister."""
 
-"""Read the ratings in from the file, store them in a dictionary and spits out the ratings
- in alphabetical order by restaurant"""
 def process_scores():
+    """Read the ratings in from the file, store them in a dictionary"""
     #  def restaurant_rating(filename):
     file = open('scores.txt')  
 
@@ -19,4 +18,18 @@ def process_scores():
     # print(restaurant_scores)
     return restaurant_scores
 
-print(process_scores())
+
+def add_new_restaurant(scores):
+    """Add new restaurant and rating"""
+    print("Do you want to add new restaurant and rating? ")
+    new_restaurant = input("Restaurant name: ")
+    new_rating = int(input("Give restaurant a rating: "))
+
+    scores[new_restaurant] = new_rating
+    # print(new_restaurant, new_rating)
+
+# read existing scores from file and store in scores variable
+scores = process_scores()
+
+# user can add a new restaurant and new rating
+add_new_restaurant(scores)
