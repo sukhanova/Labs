@@ -1,0 +1,124 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+  }
+  /* ---Trial 2: The Red Div--- */
+  /* #red {
+    background-color: #ff0000;
+    width: 350px;
+    height: 240px;
+    margin: -10px;
+  } */
+
+  /* ----Trial 3: The Flag--- */
+  /* .flag{
+    display: block
+  
+  }
+  #black {
+    background-color: black;
+    height: 100px;
+    width: 500px;
+    margin: -10px;
+  }
+
+  #flag-red {
+    background-color: red;
+    height: 100px;
+    width: 500px;
+    margin: -10px;
+  }
+
+  #yellow {
+    background-color: #ffd700;
+    height: 100px;
+    width: 500px;
+    margin: -10px;
+  } */
+  
+  /* Trial 4: Neighboring Boxes */
+  /* .single-box {
+    background-color: black;
+    display: inline-block;
+    margin: 50px;
+    width: 100px;
+    height: 100px;
+  } */
+
+
+  /* Trial 5: Mixing and Matching */
+
+/* #red {
+
+  background-color: red;
+  width: 350px;
+  height: 200px;
+
+}
+
+#blue {
+  background-color: blue;
+  width: 350px;
+  height: 200px;
+}
+
+.single-box {
+  background-color: black;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin-top: 50px;
+  margin-left: 50px;
+} */
+
+/* Trial 6: Mixing and Mixing */
+
+/* #red {
+
+  background-color: red;
+  width: 350px;
+  height: 200px;
+  display: inline-block;
+  margin-top: -10px;
+  margin-left: -10px;
+  
+}
+
+#blue {
+
+  background-color: blue;
+  width: 350px;
+  height: 200px;
+  display: inline-block;
+  margin-left: -5px;
+  margin-top: -10px;
+  
+}
+
+.single-box {
+  background-color: black;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin-top: 50px;
+  margin-left: 50px;
+} */
+
+
+/* Trial 7: Vertical Aligning */
+#row1{
+  background-color: #555555;
+  height: 130px;
+  width: 600px;
+  margin: 10px;
+  
+
+}
+
+.single-box {
+  border: solid 1px black;
+  background-color:#cccc;
+  display: inline-block;
+  vertical-align: middle;
+  width: 200px;
+  height: 100px;
+}
