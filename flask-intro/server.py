@@ -47,20 +47,39 @@ def say_hello():
           What's your name? <input type="text" name="person"><br>
           Please choose a compliment would you like to make: <br>
           <input type="radio" name="compliment" value="awesome">Awesome<br>
-          <input type="radio" name="terrific" value="terrific">Terrific<br>
-          <input type="radio" name="fantastic" value="fantastic">Fantastic<br>
-          <input type="radio" name="neato" value="neato">Neato<br>
-          <input type="radio" name="fantabulous" value="fantabulous">Fantabulous<br>
-          <input type="radio" name="wowza" value="wowza">Wowza<br>
-          <input type="radio" name="oh-so-not-meh" value="oh-so-not-meh">Oh-So-Not-Meh<br>
-          <input type="radio" name="brillian" value="brillian">Brillian<br>
-          <input type="radio" name="ducky" value="ducky">Ducky<br>
-          <input type="radio" name="coolio" value="coolio">Coolio<br>
-          <input type="radio" name="incredible" value="incredible">Incredible<br>
-          <input type="radio" name="wonderful" value="wonderful">Wonderfun<br>
-          <input type="radio" name="smashing" value="smashing">Smashing<br>
-          <input type="radio" name="lovely" value="lovely">Lovely<br>
-          <input type="submit" value="Submit">
+          <input type="radio" name="compliment" value="terrific">Terrific<br>
+          <input type="radio" name="compliment" value="fantastic">Fantastic<br>
+          <input type="radio" name="compliment" value="neato">Neato<br>
+          <input type="radio" name="compliment" value="fantabulous">Fantabulous<br>
+          <input type="radio" name="compliment" value="wowza">Wowza<br>
+          <input type="radio" name="compliment" value="oh-so-not-meh">Oh-So-Not-Meh<br>
+          <input type="radio" name="compliment" value="brilliant">Brilliant<br>
+          <input type="radio" name="compliment" value="ducky">Ducky<br>
+          <input type="radio" name="ccompliment" value="coolio">Coolio<br>
+          <input type="radio" name="compliment" value="incredible">Incredible<br>
+          <input type="radio" name="compliment" value="wonderful">Wonderful<br>
+          <input type="radio" name="compliment" value="smashing">Smashing<br>
+          <input type="radio" name="lcompliment" value="lovely">Lovely<br><br>
+          <input type="submit" value="Submit"><br><br>
+          
+          <label for="compliment">Choose a compliment</label>
+          <select name="compliment">
+          <option value=""></option>
+          <option value="avesome">Awesome</option>
+          <option value="terrific">Terrific</option>
+          <option value="fantastic">Fantastic</option>
+          <option value="neato">Neato</option>
+          <option value="fantabulous">Fantabulous</option>
+          <option value="wowza">Wowza</option>
+          <option value="oh-so-not-meh">Oh-So-Not-Meh</option>
+          <option value="brilliant">Brilliant</option>
+          <option value="ducky">Ducky</option>
+          <option value="coolio">Coolio</option>
+          <option value="incredible">Incredible</option>
+          <option value="wonderful">Wonderful</option>
+          <option value="smashing">Smashing</option>
+          <option value="lovely">Lovely</option>
+          </select>
         </form>
       </body>
     </html>
