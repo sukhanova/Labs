@@ -105,20 +105,21 @@
 
 
 /* Trial 7: Vertical Aligning */
-#row1{
+#background-box{
   background-color: #555555;
   height: 130px;
   width: 600px;
-  margin: 10px;
+  margin-top: 10px;
   
 
 }
 
-.single-box {
-  border: solid 1px black;
+.inner-box {
   background-color:#cccc;
+  height: 115px;
+  width: 30%;
+  margin: 6px;
   display: inline-block;
   vertical-align: middle;
-  width: 200px;
-  height: 100px;
+  margin-right: 10px;
 }
