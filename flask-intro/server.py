@@ -34,7 +34,7 @@ def start_here():
 @app.route('/hello')
 def say_hello():
     """Say hello and prompt for user's name."""
-
+    
     return """
     <!doctype html>
     <html>
@@ -59,10 +59,11 @@ def say_hello():
           <input type="radio" name="compliment" value="incredible">Incredible<br>
           <input type="radio" name="compliment" value="wonderful">Wonderful<br>
           <input type="radio" name="compliment" value="smashing">Smashing<br>
-          <input type="radio" name="lcompliment" value="lovely">Lovely<br><br>
+          <input type="radio" name="compliment" value="lovely">Lovely<br><br>
           <input type="submit" value="Submit"><br><br>
           
-          <label for="compliment">Choose a compliment</label>
+          <!--What's your name? <input type="text" name="person"><br>
+          <label for="compliment">Please choose a compliment would you like to make:</label>
           <select name="compliment">
           <option value=""></option>
           <option value="avesome">Awesome</option>
@@ -79,7 +80,9 @@ def say_hello():
           <option value="wonderful">Wonderful</option>
           <option value="smashing">Smashing</option>
           <option value="lovely">Lovely</option>
-          </select>
+          </select><br><br>
+          <input type="submit" value="Submit">
+          -->
         </form>
       </body>
     </html>
@@ -92,20 +95,20 @@ def greet_person():
 
     player = request.args.get("person")
 
-    compliment = choice(AWESOMENESS)
+    # compliment = choice(AWESOMENESS)
+    compliment = request.args.get("compliment")
 
-    return """
+    return f"""
     <!doctype html>
     <html>
       <head>
         <title>A Compliment</title>
       </head>
       <body>
-        Hi, {}! I think you're {}!
+        Hi, {player}! I think you're {compliment.title()}!
       </body>
     </html>
-    """.format(player, compliment)
-
+    """
 
 if __name__ == '__main__':
     # debug=True gives us error messages in the browser and also "reloads"
