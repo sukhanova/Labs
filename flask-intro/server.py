@@ -25,7 +25,7 @@ def start_here():
                   <title>flask-intro</title>
                 </head>
                 <body>
-                  <a href="/hello>"Hi! This is the home page.</a>
+                  <a href="/hello>"Navigate to the home page.</a>
                 </body>
               </html>
               """
@@ -44,9 +44,22 @@ def say_hello():
       <body>
         <h1>Hi There!</h1>
         <form action="/greet">
-          What's your name? <input type="text" name="person">
-          Which compliment would you like to make
+          What's your name? <input type="text" name="person"><br>
+          Please choose a compliment would you like to make: <br>
           <input type="radio" name="compliment" value="awesome">Awesome<br>
+          <input type="radio" name="terrific" value="terrific">Terrific<br>
+          <input type="radio" name="fantastic" value="fantastic">Fantastic<br>
+          <input type="radio" name="neato" value="neato">Neato<br>
+          <input type="radio" name="fantabulous" value="fantabulous">Fantabulous<br>
+          <input type="radio" name="wowza" value="wowza">Wowza<br>
+          <input type="radio" name="oh-so-not-meh" value="oh-so-not-meh">Oh-So-Not-Meh<br>
+          <input type="radio" name="brillian" value="brillian">Brillian<br>
+          <input type="radio" name="ducky" value="ducky">Ducky<br>
+          <input type="radio" name="coolio" value="coolio">Coolio<br>
+          <input type="radio" name="incredible" value="incredible">Incredible<br>
+          <input type="radio" name="wonderful" value="wonderful">Wonderfun<br>
+          <input type="radio" name="smashing" value="smashing">Smashing<br>
+          <input type="radio" name="lovely" value="lovely">Lovely<br>
           <input type="submit" value="Submit">
         </form>
       </body>
