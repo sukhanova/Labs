@@ -18,7 +18,17 @@ AWESOMENESS = [
 def start_here():
     """Home page."""
 
-    return "<!doctype html><html>Hi! This is the home page.</html>"
+    return """
+              <!doctype html>
+              <html>
+                <head>
+                  <title>flask-intro</title>
+                </head>
+                <body>
+                  <a href="/hello>"Hi! This is the home page.</a>
+                </body>
+              </html>
+              """
 
 
 @app.route('/hello')
@@ -35,6 +45,8 @@ def say_hello():
         <h1>Hi There!</h1>
         <form action="/greet">
           What's your name? <input type="text" name="person">
+          Which compliment would you like to make
+          <input type="radio" name="compliment" value="awesome">Awesome<br>
           <input type="submit" value="Submit">
         </form>
       </body>
