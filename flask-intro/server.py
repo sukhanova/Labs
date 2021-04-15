@@ -19,16 +19,16 @@ def start_here():
     """Home page."""
 
     return """
-              <!doctype html>
-              <html>
-                <head>
-                  <title>flask-intro</title>
-                </head>
-                <body>
-                  <a href="/hello>"Navigate to the home page.</a>
-                </body>
-              </html>
-              """
+    <!doctype html>
+    <html>
+      <head>
+        <title>Start Here</title>
+      </head>
+      <body>
+        <a href="/hello">Take me to the start</a>
+      </body>
+    </html>
+    """
 
 
 @app.route('/hello')
