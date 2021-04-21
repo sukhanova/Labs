@@ -2,15 +2,28 @@
 
 
 def output_all_items(items):
-    pass  # TODO: replace this line with your code
+    for item in items:
+        print(item)
 
 
 def get_all_evens(nums):
-    pass  # TODO: replace this line with your code
+    even_nums = []
+    
+    for num in nums:
+        if num % 2 == 0:
+            even_nums.append(num)
+            
+    return even_nums
 
 
 def get_odd_indices(items):
-    pass  # TODO: replace this line with your code
+    result = []
+    
+    for idx in range(len(items)):
+        if idx % 2 != 0:
+            result.push(items[idx])
+
+    return result
 
 
 def print_as_numbered_list(items):
