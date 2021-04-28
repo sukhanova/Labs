@@ -18,13 +18,22 @@ let numWrong = 0;
 // Loop over the chars in `word` and create divs.
 //
 const createDivsForChars = (word) => {
-  // Replace this with your code
-};
+  const wordsList = [];
+  for( const letter of word){
+    wordsList.push(`<div class='letter ${letter}'></div>`);
+    console.log(wordsList);
+  }
+}
 
 // Loop over each letter in the alphabet and generate a button
-// for each letter
+// for each letter 
 const generateLetterButtons = () => {
-  // Replace this with your code
+  const lettersInAlphabet = "abcdefghijklmnopkqrstuvwxyz";
+  const letterList = [];
+  for(const letter of lettersInAlphabet){
+    letterList.push(`<button>${letter}</button>`);
+    console.log(letterList);
+  }
 };
 
 // Set the `disabled` property of `buttonEl` to `true.
@@ -32,7 +41,14 @@ const generateLetterButtons = () => {
 // `buttonEl` is an `HTMLElement` object.
 //
 const disableLetterButton = (buttonEl) => {
-  // Replace this with your code
+  // buttonEl.disabled = ('disable,true')
+  // buttonEl = 'disable';
+  // consol.log()
+if( buttonEl === 'disabled'){
+    console.log (true)
+  }
+
+
 };
 
 // This is a helper function we will use in the future
@@ -53,14 +69,16 @@ const isLetterInWord = (letter) => {
   // finish this lab but we hard code it so we know what the word is
   // and can tell if things look correct for this word
   const word = 'hello';
-
+  console.log(word);
   // call the function that makes an empty line for each letter in the word
   // Replace this line with the function call
+  createDivsForChars(word);
 
   // call the function that makes a button for each letter in the alphabet
   // Replace this line with the function call
-
+  generateLetterButtons();
   // in the next lab, you will be adding functionality to handle when
   // someone clicks on a letter
-
+  disableLetterButton();
 })();
+console.log('running')
