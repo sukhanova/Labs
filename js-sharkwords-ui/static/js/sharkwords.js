@@ -18,21 +18,20 @@ let numWrong = 0;
 // Loop over the chars in `word` and create divs.
 //
 const createDivsForChars = (word) => {
-  const wordsList = [];
+  const wordContainer = $("#word-container");
   for( const letter of word){
-    wordsList.push(`<div class='letter ${letter}'></div>`);
-    console.log(wordsList);
+    wordContainer.append(`<div class='letter ${letter}'></div>`);
+    // console.log(wordContainer);
   }
 }
 
 // Loop over each letter in the alphabet and generate a button
 // for each letter 
 const generateLetterButtons = () => {
-  const lettersInAlphabet = "abcdefghijklmnopkqrstuvwxyz";
-  const letterList = [];
-  for(const letter of lettersInAlphabet){
-    letterList.push(`<button>${letter}</button>`);
-    console.log(letterList);
+  const lettersOfAlphabet = "abcdefghijklmnopkqrstuvwxyz";
+  const letterButtonContainer = $("#letter-buttons");
+  for(const letter of lettersOfAlphabet){
+    letterButtonContainer.append(`<button>${letter}</button>`);
   }
 };
 
@@ -41,14 +40,9 @@ const generateLetterButtons = () => {
 // `buttonEl` is an `HTMLElement` object.
 //
 const disableLetterButton = (buttonEl) => {
-  // buttonEl.disabled = ('disable,true')
-  // buttonEl = 'disable';
-  // consol.log()
-if( buttonEl === 'disabled'){
-    console.log (true)
-  }
-
-
+  const button = $(buttonEl);
+  $(buttonEl).attr('disabled',true);
+  
 };
 
 // This is a helper function we will use in the future
@@ -56,7 +50,7 @@ if( buttonEl === 'disabled'){
 // For now, you should test it out to make sure it works
 
 const isLetterInWord = (letter) => {
-  // Replace this with your code
+  return $(`div.${letter}`).length > 0
 };
 
 
@@ -79,6 +73,6 @@ const isLetterInWord = (letter) => {
   generateLetterButtons();
   // in the next lab, you will be adding functionality to handle when
   // someone clicks on a letter
-  disableLetterButton();
+  
 })();
 console.log('running')
