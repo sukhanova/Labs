@@ -50,7 +50,8 @@ function orderMelons(evt) {
         if (response.code === 'OK'){
             $('#order-status').html(response.msg);
             clearInput();
-
+         
+            // if the result code is ERROR, it will show up in red (see CSS!)    
         } else {
             clearInput();
             $('#order-status').addClass('order-error');
@@ -60,7 +61,7 @@ function orderMelons(evt) {
         }
     })
 
-    // TODO: if the result code is ERROR, make it show up in red (see our CSS!)
+   
 }
 
 function clearInput(){
