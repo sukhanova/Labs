@@ -48,13 +48,15 @@ function orderMelons(evt) {
     $.post(url, formData, (response) =>{
         // $('#order-status').html(`${response.code}, ${response.msg}`);
         if (response.code === 'OK'){
-            $('#order-status').html(`${response.code}, ${response.msg}`);
+            $('#order-status').html(response.msg);
             clearInput();
 
         } else {
             clearInput();
-            // $('#order-status').addClass('.order-error');
-            $('#order-status').html(`${response.code}!!! ${response.msg}`);
+            $('#order-status').addClass('order-error');
+            $('#order-status').html(response.msg);
+            // location.reload();
+            setInterval('location.reload()', 3000);
         }
     })
 
