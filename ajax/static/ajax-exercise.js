@@ -33,33 +33,28 @@ function showWeather(evt) {
 $("#weather-form").on('submit', showWeather);
 
 
-
-
 // PART 3: ORDER MELONS
 
 function orderMelons(evt) {
     evt.preventDefault();
 
     // TODO: show the result message after your form
+    let url = '/order-melons.json';
     let formData = {
         'melon': $('#melon-type-field').val(),
         'qty': $('#qty-field').val()
     }
 
-    $.post('/order-melons.json', formData, (response) =>{
+    $.post(url, formData, (response) =>{
         // $('#order-status').html(`${response.code}, ${response.msg}`);
         if (response.code === 'OK'){
             $('#order-status').html(`${response.code}, ${response.msg}`);
-            // $('#melon-type-field').val(' ');
-            // $('#qty-field').val(' ');
             clearInput();
 
         } else {
-            // $('#melon-type-field').val(' ');
-            // $('#qty-field').val(' ');
             clearInput();
-            $('#order-status').addClass("order-error");
-            $('#order-status').html(`${response.code}, ${response.msg}`);
+            // $('#order-status').addClass('.order-error');
+            $('#order-status').html(`${response.code}!!! ${response.msg}`);
         }
     })
 
@@ -67,9 +62,10 @@ function orderMelons(evt) {
 }
 
 function clearInput(){
-    $('#melon-type-field').val(' ');
-    $('#qty-field').val(' ');
+    $('#melon-type-field').val("");
+    $('#qty-field').val("");
 }
+
 
 $("#order-form").on('submit', orderMelons);
 
