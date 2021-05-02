@@ -12,11 +12,7 @@ function showFortune(evt) {
     });
 }
 
-
 $('#get-fortune-button').on('click', showFortune);
-
-
-
 
 
 // PART 2: SHOW WEATHER
@@ -28,7 +24,10 @@ function showWeather(evt) {
     let formData = {"zipcode": $("#zipcode-field").val()};
     
     // TODO: request weather with that URL and show the forecast in #weather-info
-    // $.get(url, data=ZIPcode, callback function)
+    $.get(url, formData, (response) => {
+        console.log(response.forecast);
+        $('#weather-info').html(response.forecast);
+    });
 }
 
 $("#weather-form").on('submit', showWeather);
