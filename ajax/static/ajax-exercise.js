@@ -50,7 +50,12 @@ function orderMelons(evt) {
         // $('#order-status').html(`${response.code}, ${response.msg}`);
         if (response.code === 'OK'){
             $('#order-status').html(`${response.code}, ${response.msg}`);
+            $('#melon-type-field').val(' ');
+            $('#qty-field').val(' ');
+
         } else {
+            $('#melon-type-field').val(' ');
+            $('#qty-field').val(' ');
             $('#order-status').addClass("order-error");
             $('#order-status').html(`${response.code}, ${response.msg}`);
         }
