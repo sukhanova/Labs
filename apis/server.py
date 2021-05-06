@@ -81,8 +81,17 @@ def get_event_details(id):
     """View the details of an event."""
 
     # TODO: Finish implementing this view function
-
-    return render_template('event-details.html')
+    url = f'https://app.ticketmaster.com/discovery/v2/events/{id}'
+    payload = {'apikey': API_KEY}
+   
+    res = requests.get(url, params=payload)
+    
+    event = res.json()
+    venues = event['_embedded']['venues']
+   
+    return render_template('event-details.html',
+                           event=event,
+                           venues=venues)
 
 
 if __name__ == '__main__':
