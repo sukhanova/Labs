@@ -87,11 +87,11 @@ def get_event_details(id):
     res = requests.get(url, params=payload)
     
     event = res.json()
-    venues = event['_embedded']['venues']
+    description = event['description']
    
     return render_template('event-details.html',
                            event=event,
-                           venues=venues)
+                           description=description)
 
 
 if __name__ == '__main__':
