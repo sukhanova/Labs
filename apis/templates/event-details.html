@@ -27,14 +27,14 @@
         TODO: Replace EVENT IMAGE URL with actual URL to one of the
         event images
       #}
-      <img src="EVENT IMAGE URL">
+      <img src="{{ event['images'[0]['url']]}}">
 
       <p>
         {#
           TODO: Replace EVENT TICKETMASTER URL with URL to event's
           Ticketmaster page
         #}
-        <a href="EVENT TICKETMASTER URL" target="_blank">
+        <a href="{{ event['url'] }}" target="_blank">
           Go to Ticketmaster page
         </a>
       </p>
