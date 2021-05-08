@@ -67,36 +67,25 @@ function TradingCard(props) {
     </div>
   );
 }
+// Render single element on page
+// ReactDOM.render(
+//   (
+//     <TradingCard
+//       name="Balloonicorn"
+//       skill="video games"
+//       imgUrl="/static/img/balloonicorn.jpg"
+//     />
+//   ),
+//   document.querySelector('#balloonicorn')
+// );
+
+function TradingCardContainer(props){
+  return(
+    <div>Hello, World!</div>
+  );
+}
 
 ReactDOM.render(
-  (
-    <TradingCard
-      name="Balloonicorn"
-      skill="video games"
-      imgUrl="/static/img/balloonicorn.jpg"
-    />
-  ),
-  document.querySelector('#balloonicorn')
-);
-
-ReactDOM.render(
-  (
-    <TradingCard
-      name="Float"
-      skill="baking pretzels"
-      imgUrl="/static/img/float.jpg"
-    />
-  ),
-  document.querySelector('#float')
-);
-
-ReactDOM.render(
-  (
-    <TradingCard
-      name="Llambda"
-      skill="knitting scarves"
-      imgUrl="/static/img/llambda.jpg"
-    />
-  ),
-  document.querySelector('#llambda')
+  <TradingCardContainer />,
+  document.querySelector('#container')
 );
