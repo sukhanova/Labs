@@ -80,8 +80,20 @@ function TradingCard(props) {
 // );
 
 function TradingCardContainer(props){
+  const cardsToDisplay = [];
+
+  for (const singleCard of tradingCardData){
+    cardsToDisplay.push(
+      <TradingCard 
+        name={singleCard.name}
+        skill={singleCard.skill}
+        imgUrl={singleCard.imgUrl}
+        id={singleCard.cardId}
+      />
+    )
+  }
   return(
-    <div>Hello, World!</div>
+    <div>{cardsToDisplay}</div>
   );
 }
 
