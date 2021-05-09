@@ -53,8 +53,15 @@ function AddTradingCard(props) {
   const [name, setName] = React.useState("");
   const [skill, setSkill] = React.useState("");
   function addNewCard() {
-    // TO BE IMPLEMENTED
-    alert('trying to add new card');
+    const name = $("#nameInput").val();
+    const skill = $("#skillInput").val();
+    $.ajax({
+      url:'/add-card',
+      data: JSON.stringify({name,skill}),
+      contentType:'application/json',
+      method:"POST"
+    })
+    //alert('trying to add new card');
   }
   return (
     <React.Fragment>
