@@ -1,6 +1,14 @@
 function App() {
   const [melons, setMelons] = React.useState({});
 
+  // response is variable and it can have any name, same as melonData
+  // setMelons(melonData) its a function that updating received data from json string to Python format
+  React.useEffect(() => {
+    fetch("/api/melons")
+      .then((response) => response.json())
+      .then((melonData) => setMelons(melonData));
+  }, []);
+
   return (
     <ReactRouterDOM.BrowserRouter>
       <Navbar logo="/static/img/watermelon.png" brand="Ubermelon">
