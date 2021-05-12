@@ -1,7 +1,9 @@
 function App() {
   const [melons, setMelons] = React.useState({});
+  const [shoppingCart, setShoppingCart] = React.useState({});
 
-  // response is variable and it can have any name, same as melonData
+  // response is variable and it can have any name, same as 
+  melonData
   // setMelons(melonData) its a function that updating received data from json string to Python format
   React.useEffect(() => {
     fetch("/api/melons")
