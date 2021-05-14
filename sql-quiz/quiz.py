@@ -529,7 +529,7 @@ if __name__ == "__main__":
     import sys
 
     if len(sys.argv) == 2 and sys.argv[1] == "--rebuild":
-        # If they passed in --rebuild, we'll make the problems file from the text
+        # If they passed in --rebuild, we'll make the probleqms file from the text
         write_pickle()
     else:
         quiz = SQLQuiz()
