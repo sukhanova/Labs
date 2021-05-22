@@ -1,6 +1,7 @@
 """Models for movie ratings app."""
 
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 db = SQLAlchemy() #this is instance
 
@@ -17,6 +18,8 @@ class User(db.Model):
                         primary_key= True)
     email = db.Column(db.String, unique= True)
     password = db.Column(db.String)
+
+    #rating = a list of Rating objects
 
     def __repr__(self):
         return f'<User user_id={self.user_id} email={self.email}>'
@@ -49,8 +52,13 @@ class Rating(db.Model):
     movie_id = db.Column(db.Integer, db.ForeignKey('movies.movie_id'))
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
 
+    movie = db.relationship('Movie', backref='ratings')
+    user = db.relationship('User', backref='ratings')
+
+    # ratings = a list of Rating objects
+
     def __repr__(self):
-        return f'<User user_id={self.user_id} email={self.email}>'
+        return f'<Rating rating_id={self.rating_id} score={self.score}>'
 
 def connect_to_db(flask_app, db_uri='postgresql:///ratings', echo=True):
     
