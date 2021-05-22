@@ -38,7 +38,7 @@ class Movie(db.Model): #this is a movie class
     poster_path = db.Column(db.String)
 
     def __repr__(self):
-        return f'<Movie movie_id={self.movie_id} title={self.title} overview ={self.overview} release_date = {self.release_date} poster_path = {poster_path}>'
+        return f'<Movie movie_id={self.movie_id} title={self.title} overview ={self.overview} release_date = {self.release_date} poster_path = {self.poster_path}>'
 
 class Rating(db.Model):
     """A movie rating."""
