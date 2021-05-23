@@ -22,7 +22,7 @@ def create_movie(title, overview, release_date, poster_path):
                   poster_path=poster_path)
     
     db.session.add(movie)
-    db.seesion.commit()
+    db.session.commit()
 
     return movie
 
