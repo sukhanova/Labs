@@ -49,10 +49,31 @@ for movie in movie_data:
 
 #crud is a python file that we already have, and inside that file, we have a function
 #called create_movie so both are being assigned to db_new_movies
-db_new_movie = crud.create_movie(title,
-                                 overview,
-                                 release_date,
-                                 poster_path)
-#print(db_new_movie)
+    db_new_movie = crud.create_movie(title,
+                                    overview,
+                                    release_date,
+                                    poster_path)
+    #print(db_new_movie)
+    #do we need to use db, explain CRUD
+    #CRUD is an idea of abstraction, we put multiple functions within DBs in CRUD so
+    #file updates are easier and acessibility is easier
 
-movies_in_db.append(db_new_movie)
+    movies_in_db.append(db_new_movie)
+
+for n in range(10):
+    email = f'user{n}@test.com'  # Voila! A unique email!
+    password = 'test'
+
+    # TODO: create a user here
+
+    #we need to use the CRUD.py in order to use the function create_new_user
+    new_user = crud.create_user(email, password)
+
+    # TODO: create 10 ratings for the user
+
+    for i in range(10):
+        
+        random_movie = choice(movies_in_db)
+        random_score = randint(1,5)
+        
+        new_rating = crud.rating(new_user, random_movie, random_score)

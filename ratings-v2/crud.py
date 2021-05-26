@@ -32,7 +32,7 @@ def rating(user, movie, score):
     rating = Rating(user=user, movie=movie, score=score)
 
     db.session.add(rating)
-    db.seesion.commit()
+    db.session.commit()
 
     return rating
 
