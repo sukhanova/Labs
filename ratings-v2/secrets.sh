@@ -1,0 +1,1 @@
+export SECRET_KEY='1Q2W3E4R5T6Y'
