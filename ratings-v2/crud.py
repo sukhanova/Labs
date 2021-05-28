@@ -13,6 +13,14 @@ def create_user(email, password):
 
     return user
 
+def get_user_by_email(email):
+    """Return a user by email."""
+
+    #User query filters out emails that matches the input
+    #email and grabs only the first one like it to match
+
+    return User.query.filter(User.email == email).first()
+
 def get_all_users():
     
     """Returns all Users"""

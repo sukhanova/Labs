@@ -42,11 +42,29 @@ def display_movie_details(movie_id):
 
 @app.route('/users')
 def list_of_users():
-    """Dsipaly list of all users"""
+    """Display list of all users"""
     users = crud.get_all_users()
 
     return render_template('all_users.html', users=users)
-        
+
+
+@app.route('/users', methods=['POST'])
+def register_user():
+    """Create a new user"""
+    email = request.form.get('email')
+    password = request.form.get('password')
+    
+    
+    user = crud.get_user_by_email(email)
+    
+    """Check if user exists in a database"""
+    if user:
+        flash('Username already exist. Please try a new username.')
+    else:
+        crud.create_user(email,password)
+        flash('Account create successfully! Please log in.')
+
+    return redirect('/')
 
 if __name__ == '__main__':
     connect_to_db(app)
