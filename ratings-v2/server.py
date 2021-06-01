@@ -40,6 +40,7 @@ def display_movie_details(movie_id):
     
     return render_template('movie_details.html', movie=movie)     
 
+
 @app.route('/users')
 def list_of_users():
     """Display list of all users"""
@@ -65,6 +66,30 @@ def register_user():
         flash('Account create successfully! Please log in.')
 
     return redirect('/')
+
+
+@app.route('/login', methods=['POST'])
+def user_login():
+    """Log a user into web app"""
+    
+    email = request.form.get('email')
+    password = request.form.get('password')
+    
+    user = crud.check_user_login_info(email, password)
+    print(user)
+    
+    if "user_id" not in session:
+        session["user_id"] = user.user_id
+    else:
+        active_user = session.get("user_id")
+        
+    if user:
+        flash(f"{user.email}, Successful login")
+    else:
+        flash("Login info is incorrect, please try again")
+        
+    return redirect('/')      
+
 
 if __name__ == '__main__':
     connect_to_db(app)

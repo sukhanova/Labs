@@ -21,11 +21,23 @@ def get_user_by_email(email):
 
     return User.query.filter(User.email == email).first()
 
-def get_all_users():
+
+def check_user_login_info(email, password):
+    """Return users email and password match in database"""
     
+    return User.query.filter((User.email == email) & (User.password == password)).first()
+
+
+def get_all_users(): 
     """Returns all Users"""
 
     return User.query.all()
+
+
+def get_user_info(user_id):
+    """Returns user details"""
+    return User.query.get(user_id)
+   
 
 def create_movie(title, overview, release_date, poster_path):
     """Create and return a new movie."""
